@@ -6,8 +6,9 @@ on:
   workflow_dispatch: # 允许手动触发
 
 permissions:
-  contents: write 
-  
+  contents: write  # 允许写入内容
+  actions: write   # 允许管理工作流运行
+
 jobs:
 
   update-ip-list:

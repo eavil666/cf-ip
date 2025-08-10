@@ -47,6 +47,8 @@ if unique_ips:
     sorted_ips = sorted(unique_ips, key=lambda ip: [int(part) for part in ip.split('.')])
     
     with open('CloudflareSpeedTest.csv', 'w') as file:
+        # 添加标题行
+        file.write('IP 地址\n')
         for ip in sorted_ips:
             file.write(ip + '\n')
     print(f'已保存 {len(sorted_ips)} 个唯一IP地址到CloudflareSpeedTest.csv文件。')

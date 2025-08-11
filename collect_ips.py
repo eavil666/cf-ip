@@ -48,9 +48,9 @@ if unique_ips:
     
     with open('CloudflareSpeedTest.csv', 'w') as file:
         # 添加标题行
-        file.write('IP 地址\n')
+        file.write('ip\n')  # 使用标准的CSV列名
         for ip in sorted_ips:
-            file.write(ip + '\n')
+            file.write(f'{ip}\n')  # 确保每行只有IP地址，符合CSV格式
     print(f'已保存 {len(sorted_ips)} 个唯一IP地址到CloudflareSpeedTest.csv文件。')
 else:
     print('未找到有效的IP地址。')
